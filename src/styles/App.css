@@ -101,10 +101,8 @@
   box-shadow: 0px 0px 10px rgb(0, 235, 51);
 }
 
-@media {
-  .race {
-    animation: race 9s ease-out forwards;
-  }
+.race {
+  animation: race 9s ease-out forwards;
 }
 
 @keyframes race {
@@ -131,4 +129,3 @@
     opacity: 0;
   }
 }
-

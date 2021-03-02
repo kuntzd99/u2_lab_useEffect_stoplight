@@ -10,7 +10,9 @@ const Highway = ({lights}) => {
   const[racing, setRacing] = useState('cars');
   const startRace = () => (lights.green) ? setRacing('cars race') : setRacing('cars');
 
-  useEffect(() => startRace());
+  useEffect(() => {
+    startRace()
+  }, [lights.green]);
 
   return (
     <div className="highway">
