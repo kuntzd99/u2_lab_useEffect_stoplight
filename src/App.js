@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
 import StopLight from './components/StopLight';
 import Highway from './components/Highway';
-
 
 function App() {
   const [lights, setLights] = useState({red: false, yellow: false, green: false});
