@@ -1,13 +1,2 @@
-import React from 'react';
-
-const RaceCar = (props) => {
-  return (
-    <div style={{
-      backgroundImage: `url(${props.url})`,
-      backgroundSize: 'cover',
-    }}>
-    </div>
-  )
-};
-
+const RaceCar = ({url}) => <div style={{backgroundImage: `url(${url})`}}></div>;
 export default RaceCar;

@@ -1,14 +1,31 @@
+@font-face {
+  font-family: Captions;
+  font-weight: 900;
+  src: url('../assets/fonts/Captions.otf') format("opentype");
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url('../images/sunsetdesert.svg');
+  background-image: url('../assets/images/sunsetdesert.svg');
   background-size: cover;
   background-position:bottom;
   min-width: 80em;
 }
 
+h1 {
+  font-family: 'Captions';
+  font-size: 6em;
+  background: -webkit-linear-gradient(rgb(245, 0, 94),rgb(134, 35, 134),rgb(52, 32, 54));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 6.5em;
+  margin-top: 1em;
+  text-shadow: 0 0 3em rgb(245, 0, 94);
+}
+
 .highway {
-  background-image: url('../images/road.svg');
+  background-image: url('../assets/images/road.svg');
   background-size: cover;
   min-height: 50vh;
   position: absolute;
@@ -17,28 +34,30 @@
   bottom: 0;
 }
 
-.stoplight-container {
-  height: 50vh;
-}
-
 .cars {
   display: flex;
   justify-content: center;
   width: 40em;
   position: relative;
-  margin: 0 -20em 0 -20em;
-  left: 50%;
-  right: 50%;
+  margin-left: calc(50vw - 20em);
+  margin-right: calc(50vw - 20em);
   bottom: 0;
 }
 
 .cars > div {
   width: 20em;
   height: 20em;
+  background-size: cover;
+}
+
+.action-area {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  padding: 4em 6em 0 6em;
 }
 
 .stoplight-container, .stoplight {
-  padding-top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +65,8 @@
 
 .stoplight-container {
   justify-content: flex-start;
-  min-height: 15em;
+  min-height: 12em;
+  padding-left: 4em;
 }
 
 .stoplight {
@@ -67,13 +87,16 @@
 
 .countdown {
   padding: 0.5em 1em;
-  margin-top: 10px;
+  margin-top: 1em;
   font-weight: bold;
   outline: none;
   border: none;
   border-radius: 0.25em;
   color: white;
   background-color: black;
+  font-family: 'Captions';
+  font-size: 1.2em;
+  min-width: 6.5em;
 }
 
 .countdown:hover {
