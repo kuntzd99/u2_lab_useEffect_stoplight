@@ -8,8 +8,7 @@ const StopLight = ({lights, setLights}) => {
         <div className="stoplight">
           <div className={lights.red ? 'red' : undefined}></div>
           <div className={lights.yellow ? 'yellow' : undefined}></div>
-          <div className={lights.green ? 'green' : undefined}></div>
-          
+          <div className={lights.green ? 'green' : undefined}></div> 
         </div>
         <div>
           <button 
