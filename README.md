@@ -14,19 +14,7 @@ In this lab, we'll be creating a desert drag race with the `useEffect` and `useS
 ### Setup
 In this lab, we'll only be working in 2 of the 4 components in our application, `Stoplight.js` and `Highway.js`. That being said, let's take a look at our App's component hierarchy before we move on:
 
-
-```js
-|-----   Component   ------|------      state      ------|
-
-App                   --->  const [lights, setLights]
-|
-|__StopLight       
-|
-|__Highway            --->  const [racing, setRacing]
-   |
-   |__RaceCar
-
-```
+<img src="https://res.cloudinary.com/ahonore42/image/upload/v1614839811/ga/Screen_Shot_2021-03-04_at_12.36.36_AM_mp6tmw.png" alt="CHD" height="500" />
 
 Currently, we have two `useState()` variables, one in `App.js` and one in `Highway.js`.
 - `lights` is an object with three boolean key value pairs, which we'll be using to control our `Stoplight` functionality:
