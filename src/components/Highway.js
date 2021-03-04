@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import RaceCar from './RaceCar';
 const BASE_URL = 'https://res.cloudinary.com/ahonore42/image/upload';
 const imgUrls = [
@@ -8,11 +8,19 @@ const imgUrls = [
 
 const Highway = ({lights}) => {
   const[racing, setRacing] = useState('cars');
-  const startRace = () => (lights.green) ? setRacing('cars race') : setRacing('cars');
+
+  const toggleRacing = () => {
+    if (racing==='cars' && lights.green) {
+      setRacing('cars race');
+    }
+    if (racing==='cars race' && !lights.green) {
+      setRacing('cars')
+    }
+  }
 
   useEffect(() => {
-    startRace()
-  }, [lights.green]);
+    toggleRacing()
+  })
 
   return (
     <div className="highway">
