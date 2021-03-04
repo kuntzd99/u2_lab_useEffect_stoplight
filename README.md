@@ -1,6 +1,6 @@
 # Stoplight useEffect()
 
-<img src="./src/images/stoplight.png" alt="stoplight">
+<img src="./src/assets/images/stoplight.png" alt="stoplight">
 
 ## Overview
 In this lab, we'll be creating a desert drag race with the `useEffect` and `useState` React hooks to get practice using these hooks together.
@@ -170,9 +170,9 @@ Let's add one into our `Highway` component.
 
 Try testing out your stoplight app in the browser with `npm start`.
 
-Oh no! An endless loop! Why is my app glitching into oblivion? Quick, shut down the server!
+Oh no! An endless loop! Why is my app glitching into oblivion? Quick, shut down the server! We'll need to make some repairs.
 
-
+![](https://s2n7e8a9.stackpathcdn.com/wp-content/uploads/2017/06/repairing.gif)
 
 Now every time our `Highway` component mounts, it will fire the `toggleRacing` function for us. We've set a condition that will switch between either `'cars'` or `'cars race'` and set the state of our component. Since the component re-renders every time state is set, we'll be stuck in an endless loop forever. 
 
