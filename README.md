@@ -193,4 +193,4 @@ In this lab we worked with `useState()` and `useEffect()` to build our stoplight
 
 ## Resources
 - [React useEffect Docs](https://reactjs.org/docs/hooks-effect.html)
-- [useEffect Lesson](https://github.com/SEI-R-1-25/u3_lesson_useEffect)
+- [useEffect Lesson](https://github.com/SEI-R-4-26/u3_lesson_useEffect)
