@@ -1,7 +1,7 @@
 @font-face {
   font-family: Captions;
   font-weight: 900;
-  src: url('../assets/fonts/Captions.otf') format("opentype");
+  src: url('../assets/fonts/Captions.otf') format('opentype');
 }
 
 .App {
@@ -9,16 +9,20 @@
   min-height: 100vh;
   background-image: url('../assets/images/sunsetdesert.svg');
   background-size: cover;
-  background-position:bottom;
+  background-position: bottom;
   min-width: 80em;
 }
 
 h1 {
   font-family: 'Captions';
   font-size: 6em;
-  background: -webkit-linear-gradient(rgb(245, 0, 94),rgb(134, 35, 134),rgb(52, 32, 54));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(
+    rgb(245, 0, 94),
+    rgb(134, 35, 134),
+    rgb(52, 32, 54)
+  );
+  --webkit-background-clip: text;
+  --webkit-text-fill-color: transparent;
   padding-left: 6.5em;
   margin-top: 1em;
   text-shadow: 0 0 3em rgb(245, 0, 94);
@@ -29,6 +33,7 @@ h1 {
   background-size: cover;
   min-height: 50vh;
   position: absolute;
+  z-index: 1;
   left: 0;
   right: 0;
   bottom: 0;
@@ -55,9 +60,12 @@ h1 {
   flex-direction: row-reverse;
   justify-content: center;
   padding: 4em 6em 0 6em;
+  position: relative;
+  z-index: 1000;
 }
 
-.stoplight-container, .stoplight {
+.stoplight-container,
+.stoplight {
   display: flex;
   flex-direction: column;
   align-items: center;
