@@ -1,5 +1,4 @@
 const StopLight = (props) => {
-  console.log(props.lights)
 
   return (
     <div className="action-area">
