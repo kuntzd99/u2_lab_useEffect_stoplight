@@ -8,19 +8,20 @@ In this lab, we'll be creating a desert drag race with the `useEffect` and `useS
 ## Getting Started
 - `Fork` and `clone` this repository
 - A starter app has been provided for you
-- `cd` into the new directory and run `npm i` to install dependencies
+- Open in VSCode with `code .`
+- `cd` into the new directory and run `npm i` to install our dependencies
 
 ## Instructions
 ### Setup
-In this lab, we'll only be working in 2 of the 4 components in our application, `Stoplight.js` and `Highway.js`. That being said, let's take a look at our App's component hierarchy before we move on:
+In this lab, we'll only be working in 2 of the 4 components in our application, `Stoplight.jsx` and `Highway.jsx`. That being said, let's take a look at our App's component hierarchy before we move on:
 
 <img src="https://res.cloudinary.com/ahonore42/image/upload/v1614839811/ga/Screen_Shot_2021-03-04_at_12.36.36_AM_mp6tmw.png" alt="CHD" height="400" />
 
-Currently, we have two `useState()` variables, one in `App.js` and one in `Highway.js`.
+Currently, we have two `useState()` variables, one in `App.js` and one in `Highway.jsx`.
 - `lights` is an object with three boolean key value pairs, which we'll be using to control our `Stoplight` functionality:
 
     ```js
-    const [lights, setLights] = useState({red: false, yellow: false, green: false});
+    const [lights, setLights] = useState({red: false, yellow: false, green: false})
     ```
 - Notice how `lights` and `setLights` are being passed as props into our `<Highway>`and `<Stoplight>` components. It's state is lifted up into `App.js` since we'll be using it in both components.
 
@@ -29,21 +30,21 @@ Currently, we have two `useState()` variables, one in `App.js` and one in `Highw
     <Highway lights={lights} />
     ```
 
-- `racing` is initially set to a string value `'cars'` which is being used as a `className` within  `Highway.js`
+- `racing` is initially set to a string value `'cars'` which is being used as a `className` within  `Highway.jsx`
     ```js
-    const[racing, setRacing] = useState('cars');
+    const[racing, setRacing] = useState('cars')
     ```
 
 3 things need to happen for our racing application to function:
-- We'll need the button in `StopLight.js` to be able to set the individual key value pairs in our `lights` state within an `onClick` callback function.
-- We'll need to add in some conditional rendering in `Stoplight.js` to reflect the changes in the `lights` state
-- And lastly, we'll need to use the `lights` state in `Highway.js ` to affect the state of racing in some way.
+- We'll need the button in `StopLight.jsx` to be able to set the individual key value pairs in our `lights` state within an `onClick` callback function.
+- We'll need to add in some conditional rendering in `Stoplight.jsx` to reflect the changes in the `lights` state
+- And lastly, we'll need to use the `lights` state in `Highway.jsx` to affect the state of racing in some way.
 
-We've taken a good look at the architecture of our application, so let's start working in `Stoplight.js`!
+We've taken a good look at the architecture of our application, so let's start working in `Stoplight.jsx`!
 
 ___
 ### Stoplight
-Since `lights` and `setLights` are being passed as props, let's destructure them from our component's arguments so they'll be available to us as `lights` and `setLights` within `Stoplight.js`.
+Since `lights` and `setLights` are being passed as props, let's destructure them from our component's arguments so they'll be available to us as `lights` and `setLights` within `Stoplight.jsx`.
 
 ```js
 const StopLight = ({lights, setLights}) => {
@@ -90,7 +91,7 @@ setLights({...lights, red: true})
 
 <br/>
 
-After you've finished adding in the conditional state-setting functionality to the `onClick` of the the button in `StopLight.js`, there are a couple more things we'll need to do to update its UI to reflect the changes in state.
+After you've finished adding in the conditional state-setting functionality to the `onClick` of the the button in `StopLight.jsx`, there are a couple more things we'll need to do to update its UI to reflect the changes in state.
 
 - First, we'll replace the content of the `<button>`, which currently says "Count" with a bit of conditional text:
     
@@ -112,11 +113,11 @@ Next, let's add in the actual lights!
     ```js
     <div className={lights.red ? 'red' : undefined}></div>
     ```
-  - If the red light is set to true, the top `<div>` will be given a className of `'red'`, otherwise it will be undefinied
+  - If the red light is set to true, the top `<div>` will be given a className of `'red'`, otherwise it will be undefined
   - The middle `<div>` will be given a className of `'yellow'` if `lights.yellow` is true.
   - Likewise, the bottom `<div>` will be given a className of `'green'` if the state of the green light is true
 
-When you've finished, make sure to start up your app with `npm start` and see if you have all three lights working properly. They should also be able to reset once all three are showing! Great! Now let's move onto `Highway.js`, since we're done with `StopLight.js`.
+When you've finished, make sure to start up your app with `npm start` and see if you have all three lights working properly. They should also be able to reset once all three are showing! Great! Now let's move onto `Highway.jsx`, since we're done with `StopLight.jsx`.
 
 ___
 ### Highway
@@ -128,23 +129,23 @@ Let's start out by destructuring `lights` from its arguments, since they are bei
 const Highway = ({lights}) => {
 ```
 
-After destructuring `lights`, create a function below the `useState()` declaration in `Highway.js` called `toggleRacing`. We'll use this function to set the state of `racing` to either `'cars'` or `'cars race'` in the following manner:
+After destructuring `lights`, create a function below the `useState()` declaration in `Highway.jsx` called `toggleRacing`. We'll use this function to set the state of `racing` to either `'cars'` or `'cars race'` in the following manner:
 
 ```js
 const [racing, setRacing] = useState('cars')
 
 const toggleRacing = () => {
-  racing==='cars' ? setRacing('cars race') : setRacing('cars')
+  racing === 'cars' ? setRacing('cars race') : setRacing('cars')
 }
 ```
 
-Now what if we wanted to fire this function whenever this component loads? That way we won't have to do it manually from the UI. This would be a greate time to implement a `useEffect()` hook! 
+Now what if we wanted to fire this function whenever this component loads? That way we won't have to do it manually from the UI. This would be a great time to implement a `useEffect()` hook! 
 
 Let's add one into our `Highway` component.
 - Make sure that you've added `useEffect` in your imports at the top of the file, next to `useState`
     
     ```js
-    import React, {useState, useEffect} from 'react';
+    import React, {useState, useEffect} from 'react'
     ```
 
 - Once you've added it in, declare a `useEffect()` hook below our `toggleRacing` function and _invoke_ `toggleRacing`
@@ -171,7 +172,7 @@ Replace the ternary in `toggleRacing` with these lines of code:
 ```js
 const toggleRacing = () => {
   if (racing==='cars' && lights.green) {
-    setRacing('cars race');
+    setRacing('cars race')
   }
   if (racing==='cars race' && !lights.green) {
     setRacing('cars')

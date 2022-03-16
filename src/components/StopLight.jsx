@@ -1,6 +1,5 @@
-import React from 'react';
-
 const StopLight = (props) => {
+
   return (
     <div className="action-area">
       <h1>Stoplight useEffect</h1>
@@ -8,19 +7,19 @@ const StopLight = (props) => {
         <div className="stoplight">
           <div></div>
           <div></div>
-          <div></div> 
+          <div></div>
         </div>
         <div>
-          <button 
-          className="countdown"
-          // onCLick here
+          <button
+            className="countdown"
+            // onCLick here
           >
-            Countdown
+          Countdown
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default StopLight;
+export default StopLight
